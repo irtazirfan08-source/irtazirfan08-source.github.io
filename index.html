@@ -14,8 +14,8 @@
                 extend: {
                     colors: {
                         brand: '#10b981',
-                        darkbg: '#0f172a',
-                        cardbg: '#1e293b'
+                        darkbg: '#070b14',
+                        cardbg: '#0d131f'
                     }
                 }
             }
@@ -56,7 +56,7 @@
                 Building Intelligent Systems & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Deep Learning</span> Solutions
             </h1>
             <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
-                Specializing in Computer Vision, Retrieval-Augmented Generation (RAG), Autonomous Visual Agents, Time-Series Transformers, and Cryptographic Security.
+                Specializing in Edge Compilation, Parameter-Efficient Fine-Tuning (PEFT/LoRA), Unsupervised Anomaly Localization, and Production MLOps Serving Meshes.
             </p>
             <div class="flex justify-center gap-4 pt-4">
                 <a href="#projects" class="bg-brand hover:bg-emerald-600 text-slate-900 font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
@@ -115,158 +115,319 @@
             <h2 class="text-3xl font-bold text-center mb-12"><span class="text-brand">#</span> Core Engineering Skills</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="bg-cardbg p-6 rounded-2xl border border-slate-800 hover:border-brand/50 transition">
-                    <i class="fas fa-robot text-teal-400 text-3xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Multimodal Agents</h3>
-                    <p class="text-slate-400 text-sm">Visual Grounding, Playwright, Perception-Action Loops, UI Automation</p>
+                    <i class="fas fa-microchip text-teal-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Edge Optimization</h3>
+                    <p class="text-slate-400 text-sm">ONNX Runtime, INT8 PTQ Quantization, Graph Compilation, Latency Profiling</p>
                 </div>
                 <div class="bg-cardbg p-6 rounded-2xl border border-slate-800 hover:border-brand/50 transition">
-                    <i class="fas fa-chart-line text-brand text-3xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Transformers & Time-Series</h3>
-                    <p class="text-slate-400 text-sm">PatchTST, Temporal Tokenization, Self-Attention, Anomaly Scoring</p>
+                    <i class="fas fa-brain text-purple-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">LLM Adaptation & PEFT</h3>
+                    <p class="text-slate-400 text-sm">LoRA From Scratch, Rank Adaptation, Cross-Entropy Perplexity, Causal Attention</p>
                 </div>
                 <div class="bg-cardbg p-6 rounded-2xl border border-slate-800 hover:border-brand/50 transition">
-                    <i class="fas fa-shield-alt text-amber-400 text-3xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Security & Cryptography</h3>
-                    <p class="text-slate-400 text-sm">Ed25519 Signatures, Offline Replay Ledgers, Zero-Network Verification</p>
+                    <i class="fas fa-cubes text-amber-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">MLOps & Serving Mesh</h3>
+                    <p class="text-slate-400 text-sm">Canary Traffic Splitting, Shadow Replay, Wasserstein Covariate Drift</p>
                 </div>
                 <div class="bg-cardbg p-6 rounded-2xl border border-slate-800 hover:border-brand/50 transition">
-                    <i class="fas fa-server text-indigo-400 text-3xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Backend & APIs</h3>
-                    <p class="text-slate-400 text-sm">FastAPI, Python Async Gateways, SQLite Ledgers, Pydantic</p>
+                    <i class="fas fa-eye text-indigo-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Computer Vision</h3>
+                    <p class="text-slate-400 text-sm">PatchCore Anomaly Detection, Sub-pixel Heatmaps, PostGIS Geospatial</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section (All 10 Repositories) -->
+    <!-- Projects Section -->
     <section id="projects" class="py-20 bg-slate-900/50 px-6 border-t border-slate-800">
         <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-end mb-12">
+            <!-- Header & Filter Bar -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                 <div>
-                    <h2 class="text-3xl font-bold"><span class="text-brand">#</span> Software & AI Repositories</h2>
-                    <p class="text-slate-400 mt-2">Production-grade cryptographic security systems, geospatial intelligence engines, visual agents, transformers, and deep learning backends.</p>
+                    <h2 class="text-3xl font-bold"><span class="text-brand">#</span> Featured Engineering Systems</h2>
+                    <p class="text-slate-400 mt-2">Production-grade AI architectures, edge compilation pipelines, fine-tuning engines, and MLOps serving meshes.</p>
+                </div>
+                
+                <!-- Category Filter Pills -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterProjects('all')" class="filter-btn active px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-brand text-slate-950" data-filter="all">All Systems</button>
+                    <button onclick="filterProjects('systems')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="systems">Systems & MLOps</button>
+                    <button onclick="filterProjects('vision')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="vision">Vision & Anomaly</button>
+                    <button onclick="filterProjects('llm')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="llm">LLMs & Tuning</button>
+                    <button onclick="filterProjects('applied')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="applied">Applied & Security</button>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- 1. CTG Shield Spatial Engine -->
-                <div class="bg-cardbg rounded-2xl border border-red-500/40 p-6 flex flex-col justify-between hover:border-red-400 transition shadow-lg shadow-red-500/5">
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 1. OpsFlow Engine (Flagship) -->
+                <div class="project-card bg-cardbg rounded-2xl border border-emerald-500/30 p-6 flex flex-col justify-between hover:border-emerald-400 transition shadow-lg shadow-emerald-500/5" data-category="systems">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-red-500/20 text-red-300 rounded-full inline-block mb-4">Geospatial & Spatial PostGIS</span>
-                        <h3 class="text-xl font-bold mb-2">CTG_Shield_Spatial_Engine</h3>
-                        <p class="text-slate-400 text-sm mb-4">Real-time geospatial danger-zone intelligence and proximity panic alert engine for Chittagong using PostGIS polygon indexing (<code class="text-red-300">ST_Contains</code>), time-window risk scoring, and async WebSocket SOS broadcasting.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-md">MLOps & Mesh</span>
+                            <span class="text-[11px] font-mono text-slate-400">Canary + Drift</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">OpsFlow Engine</h3>
+                        <p class="text-slate-400 text-sm mb-4">Multi-model registry and dynamic traffic router with SHA256 auditability, probabilistic Canary splitting (0–100%), zero-latency shadow replication, and Wasserstein covariate drift tracking.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PyTorch</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">SciPy EMD</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/CTG_Shield_Spatial_Engine" target="_blank" class="text-red-400 text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/opsflow-engine" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 2. Offline QR Ticket Guard -->
-                <div class="bg-cardbg rounded-2xl border border-amber-500/40 p-6 flex flex-col justify-between hover:border-amber-400 transition shadow-lg shadow-amber-500/5">
+                <!-- 2. AnomaCore AI (Flagship) -->
+                <div class="project-card bg-cardbg rounded-2xl border border-amber-500/30 p-6 flex flex-col justify-between hover:border-amber-400 transition shadow-lg shadow-amber-500/5" data-category="vision">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full inline-block mb-4">Security & Cryptography</span>
-                        <h3 class="text-xl font-bold mb-2">Offline_QR_Ticket_Guard</h3>
-                        <p class="text-slate-400 text-sm mb-4">Zero-network event admission engine using Ed25519 asymmetric cryptography and local SQLite replay ledgers to prevent forged and duplicate tickets.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-md">Computer Vision</span>
+                            <span class="text-[11px] font-mono text-slate-400">Unsupervised</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">AnomaCore AI</h3>
+                        <p class="text-slate-400 text-sm mb-4">Unsupervised industrial defect localization implementing the PatchCore framework, multi-scale convolutional memory banks, nearest-neighbor Euclidean distance scoring, and sub-pixel contour isolation.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PyTorch</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PatchCore</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">OpenCV</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/Offline_QR_Ticket_Guard" target="_blank" class="text-amber-400 text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/anomacore" target="_blank" class="text-amber-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 3. Deep Temporal Forecaster AI -->
-                <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition">
+                <!-- 3. AdaptiForge AI (Flagship) -->
+                <div class="project-card bg-cardbg rounded-2xl border border-purple-500/30 p-6 flex flex-col justify-between hover:border-purple-400 transition shadow-lg shadow-purple-500/5" data-category="llm">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full inline-block mb-4">Transformer Time-Series</span>
-                        <h3 class="text-xl font-bold mb-2">Deep_Temporal_Forecaster_AI</h3>
-                        <p class="text-slate-400 text-sm mb-4">PatchTST-inspired PyTorch engine utilizing temporal patch tokenization and channel-independent self-attention for multi-step forecasting and anomaly detection.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-purple-500/10 text-purple-400 rounded-full">PEFT & LLMs</span>
+                            <span class="text-[11px] font-mono text-slate-400">LoRA From Scratch</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">AdaptiForge AI</h3>
+                        <p class="text-slate-400 text-sm mb-4">Custom Low-Rank Adaptation (LoRA) engine freezing base parameters while training low-rank A/B decomposition matrices on transformer projections, featuring live perplexity convergence tracking.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PyTorch</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Transformer PEFT</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/Deep_Temporal_Forecaster_AI" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/adaptiforge-ai" target="_blank" class="text-purple-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 4. Vision UI Navigator Agent -->
-                <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition">
+                <!-- 4. EdgeDeploy AI (Flagship) -->
+                <div class="project-card bg-cardbg rounded-2xl border border-cyan-500/30 p-6 flex flex-col justify-between hover:border-cyan-400 transition shadow-lg shadow-cyan-500/5" data-category="systems">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-teal-500/10 text-teal-400 rounded-full inline-block mb-4">Multimodal Vision Agent</span>
-                        <h3 class="text-xl font-bold mb-2">Vision_UI_Navigator_Agent</h3>
-                        <p class="text-slate-400 text-sm mb-4">Autonomous multimodal web navigation agent using visual grounding, DOM bounding box normalization, and async Playwright execution.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-cyan-500/10 text-cyan-400 rounded-full">Edge Optimization</span>
+                            <span class="text-[11px] font-mono text-slate-400">1.83x Speedup</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">EdgeDeploy AI</h3>
+                        <p class="text-slate-400 text-sm mb-4">Model optimization engine compiling PyTorch vision graphs into constant-folded ONNX binaries, executing dynamic INT8 Post-Training Quantization, and profiling p95 latency and MSE tensor drift.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">ONNX Runtime</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">INT8 PTQ</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PyTorch</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/Vision_UI_Navigator_Agent" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/edgedeploy-ai" target="_blank" class="text-cyan-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 5. ALO Agri RAG AI -->
-                <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition">
+                <!-- 5. CTG Shield Spatial Engine -->
+                <div class="project-card bg-cardbg rounded-2xl border border-red-500/30 p-6 flex flex-col justify-between hover:border-red-400 transition shadow-lg shadow-red-500/5" data-category="applied">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full inline-block mb-4">RAG & Vector Search</span>
-                        <h3 class="text-xl font-bold mb-2">ALO_Agri_RAG_AI</h3>
-                        <p class="text-slate-400 text-sm mb-4">Domain-specific RAG system built with FAISS and SentenceTransformers for zero-hallucination agricultural advisories.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-red-500/10 text-red-300 rounded-full">Geospatial PostGIS</span>
+                            <span class="text-[11px] font-mono text-slate-400">ST_Contains</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">CTG_Shield_Spatial_Engine</h3>
+                        <p class="text-slate-400 text-sm mb-4">Real-time geospatial danger-zone intelligence and proximity panic alert engine using PostGIS polygon indexing, dynamic risk decay scoring, and asynchronous WebSocket SOS broadcasting.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PostGIS</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">WebSockets</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Python Async</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/ALO_Agri_RAG_AI" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/CTG_Shield_Spatial_Engine" target="_blank" class="text-red-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 6. Crop Weather YOLO Estimator -->
-                <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition">
+                <!-- 6. Offline QR Ticket Guard -->
+                <div class="project-card bg-cardbg rounded-2xl border border-amber-500/30 p-6 flex flex-col justify-between hover:border-amber-400 transition shadow-lg shadow-amber-500/5" data-category="applied">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full inline-block mb-4">YOLOv8 & Vision</span>
-                        <h3 class="text-xl font-bold mb-2">Crop_Weather_YOLO_Estimator</h3>
-                        <p class="text-slate-400 text-sm mb-4">Computer vision microclimate estimator analyzing atmospheric clarity, saturation, and YOLO detections.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-300 rounded-full">Security & Crypto</span>
+                            <span class="text-[11px] font-mono text-slate-400">Ed25519</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Offline_QR_Ticket_Guard</h3>
+                        <p class="text-slate-400 text-sm mb-4">Zero-network event admission engine using Ed25519 asymmetric cryptography and transactional SQLite replay ledgers to cryptographically prevent ticket forging and replay attacks.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Cryptography</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Ed25519</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">SQLite</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/Crop_Weather_YOLO_Estimator" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/Offline_QR_Ticket_Guard" target="_blank" class="text-amber-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 7. AgriAgent Orchestrator -->
-                <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition">
+                <!-- 7. Deep Temporal Forecaster AI -->
+                <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="systems">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-amber-500/10 text-amber-400 rounded-full inline-block mb-4">Multi-Agent AI</span>
-                        <h3 class="text-xl font-bold mb-2">AgriAgent_Orchestrator</h3>
-                        <p class="text-slate-400 text-sm mb-4">Multi-agent execution pipeline delegating tasks across Diagnostic, Telemetry, and Synthesis agents.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-full">Time-Series</span>
+                            <span class="text-[11px] font-mono text-slate-400">PatchTST</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Deep_Temporal_Forecaster_AI</h3>
+                        <p class="text-slate-400 text-sm mb-4">PatchTST-inspired PyTorch engine utilizing sub-series temporal patch tokenization and channel-independent self-attention for multi-step horizon forecasting and anomaly detection.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PyTorch</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Transformers</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/AgriAgent_Orchestrator" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/Deep_Temporal_Forecaster_AI" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 8. Produce Inspector AI -->
-                <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition">
+                <!-- 8. Vision UI Navigator Agent -->
+                <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="vision">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full inline-block mb-4">Quality Analytics</span>
-                        <h3 class="text-xl font-bold mb-2">Produce_Inspector_AI</h3>
-                        <p class="text-slate-400 text-sm mb-4">Automated object detection and defect grading pipeline calculating defect rates and pricing multipliers.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-teal-500/10 text-teal-400 rounded-full">Vision Agents</span>
+                            <span class="text-[11px] font-mono text-slate-400">Grounding</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Vision_UI_Navigator_Agent</h3>
+                        <p class="text-slate-400 text-sm mb-4">Autonomous multimodal web navigation agent using visual grounding, DOM bounding box normalization, and asynchronous Playwright perception-action execution loops.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Playwright</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">VLM Grounding</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Python Async</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/Produce_Inspector_AI" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/Vision_UI_Navigator_Agent" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 9. Crop Guard AI -->
-                <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition">
+                <!-- 9. ALO Agri RAG AI -->
+                <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="llm">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-rose-500/10 text-rose-400 rounded-full inline-block mb-4">Multimodal PyTorch</span>
-                        <h3 class="text-xl font-bold mb-2">Crop_Guard_AI</h3>
-                        <p class="text-slate-400 text-sm mb-4">Multimodal plant disease diagnostic pipeline integrating leaf imagery with soil pH and climate metrics.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-full">RAG & Search</span>
+                            <span class="text-[11px] font-mono text-slate-400">FAISS Dense</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">ALO_Agri_RAG_AI</h3>
+                        <p class="text-slate-400 text-sm mb-4">Domain-specific Retrieval-Augmented Generation pipeline built with FAISS vector indexing and SentenceTransformer embeddings for context-grounded advisory generation.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FAISS</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Transformers</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/Crop_Guard_AI" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/ALO_Agri_RAG_AI" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
-                <!-- 10. Broiler AI Project -->
-                <div class="bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition">
+                <!-- 10. Crop Weather YOLO Estimator -->
+                <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="vision">
                     <div>
-                        <span class="text-xs font-semibold px-3 py-1 bg-purple-500/10 text-purple-400 rounded-full inline-block mb-4">Poultry Analytics</span>
-                        <h3 class="text-xl font-bold mb-2">Broiler-ai-project</h3>
-                        <p class="text-slate-400 text-sm mb-4">Telemetry and growth curve predictive analytics monitoring FCR, heat stress, and ammonia risks.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-cyan-500/10 text-cyan-400 rounded-full">Vision Telemetry</span>
+                            <span class="text-[11px] font-mono text-slate-400">YOLOv8</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Crop_Weather_YOLO_Estimator</h3>
+                        <p class="text-slate-400 text-sm mb-4">Computer vision microclimate estimator analyzing atmospheric clarity, RGB saturation distributions, and real-time bounding box detections.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">YOLOv8</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">OpenCV</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/irtazirfan08-source/Broiler-ai-project" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">
-                        View Repository <i class="fas fa-arrow-right text-xs"></i>
+                    <a href="https://github.com/irtazirfan08-source/Crop_Weather_YOLO_Estimator" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 11. Crop Guard AI -->
+                <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="applied">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-rose-500/10 text-rose-400 rounded-full">Multimodal Vision</span>
+                            <span class="text-[11px] font-mono text-slate-400">PyTorch</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Crop_Guard_AI</h3>
+                        <p class="text-slate-400 text-sm mb-4">Multimodal plant disease diagnostic pipeline fusing deep convolutional leaf feature maps with tabular soil chemistry and ambient environmental telemetry.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PyTorch</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Multimodal</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/Crop_Guard_AI" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 12. Broiler AI Project -->
+                <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="applied">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-purple-500/10 text-purple-400 rounded-full">Predictive Analytics</span>
+                            <span class="text-[11px] font-mono text-slate-400">Telemetry</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Broiler-ai-project</h3>
+                        <p class="text-slate-400 text-sm mb-4">Industrial telemetry and growth-curve analytics engine tracking feed conversion ratios (FCR), heat stress coefficients, and ambient ammonia risks.</p>
+                        
+                        <!-- Tech Tags -->
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PyTorch</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Docker</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/Broiler-ai-project" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Metrics</span> <i class="fas fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
@@ -278,7 +439,7 @@
     <section id="contact" class="py-20 px-6 border-t border-slate-800">
         <div class="max-w-4xl mx-auto text-center space-y-8">
             <h2 class="text-3xl font-bold">Contact & Collaboration</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Available for remote software & AI engineering roles, flexible research opportunities, and technical consulting.</p>
+            <p class="text-slate-400 max-w-xl mx-auto">Available for software & AI engineering roles, research collaborations, and production system consulting.</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
                 <!-- Email Card -->
@@ -324,6 +485,32 @@
     <footer class="py-8 text-center text-slate-500 text-sm border-t border-slate-800/80">
         © 2026 Irtaz Irfan. All rights reserved.
     </footer>
+
+    <!-- Interactive Project Filtering Script -->
+    <script>
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Toggle active styling on buttons
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.className = 'filter-btn active px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-brand text-slate-950';
+                } else {
+                    btn.className = 'filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700';
+                }
+            });
+
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>

@@ -145,7 +145,7 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                 <div>
                     <h2 class="text-3xl font-bold"><span class="text-brand">#</span> Featured Engineering Systems</h2>
-                    <p class="text-slate-400 mt-2">Production-grade AI architectures, edge compilation pipelines, fine-tuning engines, and MLOps serving meshes.</p>
+                    <p class="text-slate-400 mt-2">Production-grade AI architectures, autonomous developer tools, RAG agents, and MLOps serving meshes.</p>
                 </div>
                 
                 <!-- Category Filter Pills -->
@@ -153,15 +153,169 @@
                     <button onclick="filterProjects('all')" class="filter-btn active px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-brand text-slate-950" data-filter="all">All Systems</button>
                     <button onclick="filterProjects('systems')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="systems">Systems & MLOps</button>
                     <button onclick="filterProjects('vision')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="vision">Vision & Anomaly</button>
-                    <button onclick="filterProjects('llm')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="llm">LLMs & Tuning</button>
-                    <button onclick="filterProjects('applied')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="applied">Applied & Security</button>
+                    <button onclick="filterProjects('llm')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="llm">LLMs & Agents</button>
+                    <button onclick="filterProjects('applied')" class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-filter="applied">Applied & Tools</button>
                 </div>
             </div>
 
             <!-- Project Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <!-- 1. OpsFlow Engine (Flagship) -->
+                <!-- 1. ArchLens AI -->
+                <div class="project-card bg-cardbg rounded-2xl border border-emerald-500/30 p-6 flex flex-col justify-between hover:border-emerald-400 transition shadow-lg shadow-emerald-500/5" data-category="systems">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-md">Architecture Audit</span>
+                            <span class="text-[11px] font-mono text-slate-400">Mermaid.js</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">ArchLens AI</h3>
+                        <p class="text-slate-400 text-sm mb-4">Autonomous system design review engine auditing architecture anti-patterns (SPOFs, unthrottled queues, unindexed queries) and synthesizing dynamic Mermaid.js flowcharts.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">OpenCV</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Mermaid.js</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/archlens-ai" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Engine</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 2. IncidentPulse AI -->
+                <div class="project-card bg-cardbg rounded-2xl border border-rose-500/30 p-6 flex flex-col justify-between hover:border-rose-400 transition shadow-lg shadow-rose-500/5" data-category="systems">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-rose-500/10 text-rose-400 rounded-md">Production SRE</span>
+                            <span class="text-[11px] font-mono text-slate-400">Wasserstein EMD</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">IncidentPulse AI</h3>
+                        <p class="text-slate-400 text-sm mb-4">Autonomous SRE incident investigation engine calculating Wasserstein distance anomaly shifts across distributed telemetry, isolating blast radiuses, and outputting runbooks.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">SciPy EMD</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Vite</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/incidentpulse-ai" target="_blank" class="text-rose-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Engine</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 3. RepoScope -->
+                <div class="project-card bg-cardbg rounded-2xl border border-cyan-500/30 p-6 flex flex-col justify-between hover:border-cyan-400 transition shadow-lg shadow-cyan-500/5" data-category="systems">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-cyan-500/10 text-cyan-400 rounded-md">Codebase Cartography</span>
+                            <span class="text-[11px] font-mono text-slate-400">AST Engine</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">RepoScope</h3>
+                        <p class="text-slate-400 text-sm mb-4">Codebase decomposition and cartography engine extracting architectural layers, runtime sequence flows, entry-point manifests, and developer onboarding runbooks.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">AST Parser</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Mermaid.js</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/reposcope" target="_blank" class="text-cyan-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Engine</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 4. SyncPilot -->
+                <div class="project-card bg-cardbg rounded-2xl border border-purple-500/30 p-6 flex flex-col justify-between hover:border-purple-400 transition shadow-lg shadow-purple-500/5" data-category="applied">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-purple-500/10 text-purple-400 rounded-md">Meeting Diarization</span>
+                            <span class="text-[11px] font-mono text-slate-400">Jira AI</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">SyncPilot</h3>
+                        <p class="text-slate-400 text-sm mb-4">Multi-speaker conversational diarizer and talk-time analytics engine extracting consensus items, architectural decisions, and synthesizing structured Jira/Linear tickets.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Diarization</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Jira API</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/syncpilot" target="_blank" class="text-purple-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Engine</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 5. Vocalis -->
+                <div class="project-card bg-cardbg rounded-2xl border border-teal-500/30 p-6 flex flex-col justify-between hover:border-teal-400 transition shadow-lg shadow-teal-500/5" data-category="applied">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-teal-500/10 text-teal-400 rounded-md">Duplex Voice AI</span>
+                            <span class="text-[11px] font-mono text-slate-400">24kHz Audio</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Vocalis</h3>
+                        <p class="text-slate-400 text-sm mb-4">Real-time duplex voice virtual assistant integrating Web Speech API recognition, fast conversational reasoning, and streaming harmonic neural audio synthesis.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Web Speech</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Audio WAV</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/vocalis-ai" target="_blank" class="text-teal-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Engine</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 6. EvalIQ -->
+                <div class="project-card bg-cardbg rounded-2xl border border-amber-500/30 p-6 flex flex-col justify-between hover:border-amber-400 transition shadow-lg shadow-amber-500/5" data-category="llm">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-md">Mock Coach</span>
+                            <span class="text-[11px] font-mono text-slate-400">Rubric Scorer</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">EvalIQ</h3>
+                        <p class="text-slate-400 text-sm mb-4">Autonomous mock technical interview coach evaluating verbal/text responses across 4 rubric dimensions and synthesizing adaptive probing follow-up questions.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Speech-to-Text</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Rubric Engine</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/evaliq-ai" target="_blank" class="text-amber-400 text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Engine</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 7. DocuAssist -->
+                <div class="project-card bg-cardbg rounded-2xl border border-emerald-500/30 p-6 flex flex-col justify-between hover:border-emerald-400 transition shadow-lg shadow-emerald-500/5" data-category="llm">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-md">Grounded RAG</span>
+                            <span class="text-[11px] font-mono text-slate-400">Citations</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">DocuAssist</h3>
+                        <p class="text-slate-400 text-sm mb-4">Enterprise customer support RAG agent with hybrid dense/sparse vector retrieval, strict confidence hallucination guards, sub-2ms search telemetry, and verified source citations.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Scikit-Learn</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">TF-IDF</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">React</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/docuassist-ai" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Engine</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 8. OpsFlow Engine (Flagship) -->
                 <div class="project-card bg-cardbg rounded-2xl border border-emerald-500/30 p-6 flex flex-col justify-between hover:border-emerald-400 transition shadow-lg shadow-emerald-500/5" data-category="systems">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -183,7 +337,7 @@
                     </a>
                 </div>
 
-                <!-- 2. AnomaCore AI (Flagship) -->
+                <!-- 9. AnomaCore AI (Flagship) -->
                 <div class="project-card bg-cardbg rounded-2xl border border-amber-500/30 p-6 flex flex-col justify-between hover:border-amber-400 transition shadow-lg shadow-amber-500/5" data-category="vision">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -205,7 +359,7 @@
                     </a>
                 </div>
 
-                <!-- 3. AdaptiForge AI (Flagship) -->
+                <!-- 10. AdaptiForge AI (Flagship) -->
                 <div class="project-card bg-cardbg rounded-2xl border border-purple-500/30 p-6 flex flex-col justify-between hover:border-purple-400 transition shadow-lg shadow-purple-500/5" data-category="llm">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -227,7 +381,7 @@
                     </a>
                 </div>
 
-                <!-- 4. EdgeDeploy AI (Flagship) -->
+                <!-- 11. EdgeDeploy AI (Flagship) -->
                 <div class="project-card bg-cardbg rounded-2xl border border-cyan-500/30 p-6 flex flex-col justify-between hover:border-cyan-400 transition shadow-lg shadow-cyan-500/5" data-category="systems">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -249,7 +403,7 @@
                     </a>
                 </div>
 
-                <!-- 5. CTG Shield Spatial Engine -->
+                <!-- 12. CTG Shield Spatial Engine -->
                 <div class="project-card bg-cardbg rounded-2xl border border-red-500/30 p-6 flex flex-col justify-between hover:border-red-400 transition shadow-lg shadow-red-500/5" data-category="applied">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -271,7 +425,7 @@
                     </a>
                 </div>
 
-                <!-- 6. CTG Shield Mobile Client -->
+                <!-- 13. CTG Shield Mobile Client -->
                 <div class="project-card bg-cardbg rounded-2xl border border-red-500/30 p-6 flex flex-col justify-between hover:border-red-400 transition shadow-lg shadow-red-500/5" data-category="applied">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -293,7 +447,7 @@
                     </a>
                 </div>
 
-                <!-- 7. Offline QR Ticket Guard -->
+                <!-- 14. Offline QR Ticket Guard -->
                 <div class="project-card bg-cardbg rounded-2xl border border-amber-500/30 p-6 flex flex-col justify-between hover:border-amber-400 transition shadow-lg shadow-amber-500/5" data-category="applied">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -315,7 +469,7 @@
                     </a>
                 </div>
 
-                <!-- 8. Deep Temporal Forecaster AI -->
+                <!-- 15. Deep Temporal Forecaster AI -->
                 <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="systems">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -336,7 +490,7 @@
                     </a>
                 </div>
 
-                <!-- 9. Vision UI Navigator Agent -->
+                <!-- 16. Vision UI Navigator Agent -->
                 <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="vision">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -357,7 +511,7 @@
                     </a>
                 </div>
 
-                <!-- 10. ALO Agri RAG AI -->
+                <!-- 17. ALO Agri RAG AI -->
                 <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="llm">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -378,7 +532,7 @@
                     </a>
                 </div>
 
-                <!-- 11. Crop Weather YOLO Estimator -->
+                <!-- 18. Crop Weather YOLO Estimator -->
                 <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="vision">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -399,7 +553,7 @@
                     </a>
                 </div>
 
-                <!-- 12. Crop Guard AI -->
+                <!-- 19. Crop Guard AI -->
                 <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="applied">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -420,7 +574,7 @@
                     </a>
                 </div>
 
-                <!-- 13. Broiler AI Project -->
+                <!-- 20. Broiler AI Project -->
                 <div class="project-card bg-cardbg rounded-2xl border border-slate-800 p-6 flex flex-col justify-between hover:border-brand/50 transition" data-category="applied">
                     <div>
                         <div class="flex items-center justify-between mb-3">

@@ -193,7 +193,27 @@
 
             <!-- Project Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+<!-- 0. PagedInfer (Flagship LLM Serving) -->
+                <div class="project-card bg-cardbg rounded-2xl border border-emerald-500/30 p-6 flex flex-col justify-between hover:border-emerald-400 transition shadow-lg shadow-emerald-500/5" data-category="systems">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-md">LLM Serving</span>
+                            <span class="text-[11px] font-mono text-slate-400">8.37x Speedup</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">PagedInfer</h3>
+                        <p class="text-slate-400 text-sm mb-4">High-throughput LLM serving engine implementing paged KV-cache memory allocation and continuous iteration batching, delivering an 8.37x throughput gain over static batching.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">PyTorch</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">FastAPI SSE</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Paged KV-Cache</span>
+                            <span class="text-[11px] font-mono bg-slate-800/80 text-slate-300 px-2 py-0.5 rounded">Continuous Batching</span>
+                        </div>
+                    </div>
+                    <a href="https://github.com/irtazirfan08-source/PagedInfer" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center justify-between pt-4 border-t border-slate-800">
+                        <span>Explore Source & Engine</span> <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
                 <!-- 1. ArchLens AI -->
                 <div class="project-card bg-cardbg rounded-2xl border border-emerald-500/30 p-6 flex flex-col justify-between hover:border-emerald-400 transition shadow-lg shadow-emerald-500/5" data-category="systems">
                     <div>
